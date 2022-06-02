@@ -1,0 +1,24 @@
+{
+  "name": "homie",
+  "version": "0.1.0",
+  "description": "",
+  "main": "home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@picovoice/picovoice-node": "^2.1.1",
+    "@picovoice/porcupine-node": "^2.1.1",
+    "@picovoice/pvrecorder-node": "^1.0.2",
+    "axios": "^0.26.0",
+    "axois": "^0.0.1-security",
+    "chromecast-api": "^0.4.0",
+    "express": "^4.17.3",
+    "node-hue-api": "^5.0.0-beta.13",
+    "play-sound": "^1.1.5",
+    "speaker": "^0.5.3"
+  }
+}
