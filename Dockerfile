@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # Install OS dependencies
-RUN apt update && apt install build-essential mpg123 libasound2-dev snapd -y
+RUN apt update && apt install build-essential mpg123 libasound2-dev curl -y
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
