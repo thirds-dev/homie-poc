@@ -1,7 +1,7 @@
-FROM node:18
+FROM ubuntu:latest
 
 # Install OS dependencies
-RUN apt update && apt install mpg123 libasound2-dev -y
+RUN apt update && apt install mpg123 libasound2-dev nodejs npm -y
 
 # Create app directory
 WORKDIR /usr/src/app
