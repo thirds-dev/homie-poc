@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Install OS dependencies
 RUN apt update
-RUN apt-get -y install curl dkms git i2c-tools alsa-utils libasound2-plugins
+RUN apt-get -y install curl
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
