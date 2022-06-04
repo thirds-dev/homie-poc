@@ -9,7 +9,8 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json homie.js music yo-homie.ppn yo-homie.rhn ./
 
 # Install app dependencies
-RUN npm i node-gyp -g
+RUN npm i -g node-gyp@latest && npm config set node_gyp "/usr/local/lib/node_modules/node-gyp/bin/node-gyp.js"
+RUN node-gyp rebuild
 RUN node-gyp configure
 RUN npm ci --only=production
 
