@@ -3,9 +3,7 @@ FROM ubuntu:latest
 # Install OS dependencies
 RUN apt update && apt install git curl -y
 RUN git clone https://github.com/respeaker/seeed-voicecard.git
-RUN cd seeed-voicecard
-RUN sudo ./install.sh
-RUN cd ..
+RUN cd seeed-voicecard && ./install.sh && cd ..
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
