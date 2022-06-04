@@ -22,7 +22,6 @@ const USERNAME = process.env.PHILIPS_HUE_USERNAME
   // The name of the light we wish to retrieve by name
   , LIGHT_ID = 1;
 
-const chromecast = new ChromecastApi();
 const player = require('play-sound')(opts = {});
 
 function playSound(location) {
@@ -45,6 +44,7 @@ async function playVideo(vidId) {
     }
   });
 
+  const chromecast = new ChromecastApi();
   const shields = chromecast.devices.filter((d) => d.friendlyName === process.env.CHROMECAST_NAME);
   const shield = shields.length ? shields[0] : null;
   if (shield) {
@@ -127,7 +127,7 @@ async function startParty() {
 async function endParty() {
   axios({
     method: "PUT",
-    url: "https://192.168.1.67/api/v1/execution",
+    url: "https://${process.env.PHILIPS_HUE_SYNC_IP}/api/v1/execution",
     headers: {
       Authorization: `Bearer ${philipsHueSyncKey}`
     },
