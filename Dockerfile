@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # Install OS dependencies
-RUN apt update && apt install build-essential crossbuild-essential-arm64 make mpg123 libasound2-dev -y
+RUN apt update && apt install build-essential crossbuild-essential-arm64 make mpg123 libasound2-dev snapd -y
 RUN snap install node --channel=18/stable --classic
 
 # Create app directory
