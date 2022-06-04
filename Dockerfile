@@ -9,6 +9,8 @@ WORKDIR /usr/src/app
 COPY package.json package-lock.json homie.js music yo-homie.ppn yo-homie.rhn ./
 
 # Install app dependencies
+RUN npm i node-gyp -g
+RUN node-gyp configure
 RUN npm ci --only=production
 
 CMD [ "node", "homie.js" ]
