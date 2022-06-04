@@ -18,23 +18,6 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v3
 
-      - name: 'Setup Node.js'
-        uses: 'actions/setup-node@v3'
-        with:
-          node-version: 18
-          cache: 'npm'
-      - run: npm ci
-      - run: npm build
-      - run: npm test
-
-      - name: 'Automated Version Bump'
-        id: version-bump
-        uses: 'phips28/gh-action-bump-version@master'
-        with:
-          tag-prefix: 'v'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
