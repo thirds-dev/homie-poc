@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 # Install OS dependencies
-RUN apt update && apt install curl -y
+RUN apt update && apt install git curl -y
 RUN git clone https://github.com/respeaker/seeed-voicecard.git
 RUN cd seeed-voicecard
 RUN sudo ./install.sh
