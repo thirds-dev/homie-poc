@@ -2,8 +2,6 @@ FROM ubuntu:latest
 
 # Install OS dependencies
 RUN apt update
-RUN apt-get -y install raspberrypi-kernel-headers raspberrypi-kernel 
-RUN apt-get -y install linux-raspi linux-headers-raspi linux-image-raspi
 RUN apt-get -y install curl dkms git i2c-tools libasound2-plugins
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
