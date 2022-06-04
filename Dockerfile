@@ -1,9 +1,9 @@
 FROM ubuntu:latest
 
 # Install OS dependencies
-RUN apt update && apt install build-essential crossbuild-essential-arm64 make mpg123 libasound2-dev snapd -y
-RUN systemctl start snapd
-RUN snap install node --channel=18/stable --classic
+RUN apt update && apt install build-essential mpg123 libasound2-dev snapd -y
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN apt-get install -y nodejs
 
 # Create app directory
 WORKDIR /usr/src/app
