@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Install OS dependencies
 RUN apt update
-RUN apt-get -y install curl
+RUN apt-get -y install alsa-utils curl
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
@@ -10,6 +10,7 @@ RUN apt-get install -y nodejs
 WORKDIR /usr/src/app
 
 COPY package.json package-lock.json homie.js music yo-homie.ppn yo-homie.rhn ./
+COPY asound.conf /etc/
 
 # Install app dependencies
 RUN npm i
