@@ -204,7 +204,7 @@ async function runHomie() {
   );
 
   const frameLength = handle.frameLength;
-  const recorder = new PvRecorder(-1, frameLength);
+  const recorder = new PvRecorder(9, frameLength);
   recorder.start();
 
   console.log(`Using device: ${recorder.getSelectedDevice()}...`);
@@ -226,6 +226,8 @@ process.on("SIGINT", function () {
 
 (async function () {
   try {
+    playSound('./music/Listening.mp3');
+
     await runHomie();
   } catch (e) {
     console.error(e.toString());
