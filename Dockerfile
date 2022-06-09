@@ -15,4 +15,5 @@ COPY asound.conf /etc/
 # Install app dependencies
 RUN npm i
 
+EXPOSE 3000
 CMD [ "node", "homie.js" ]
