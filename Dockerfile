@@ -17,4 +17,4 @@ COPY asound.conf /etc/
 RUN npm i
 
 EXPOSE 3000
-CMD [ "node", "--require './tracing.js'", "homie.js" ]
+CMD [ "node", "homie.js" ]
