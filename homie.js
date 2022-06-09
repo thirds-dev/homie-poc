@@ -1,5 +1,7 @@
 const fs = require("fs");
 
+const express = require("express");
+
 const Picovoice = require("@picovoice/picovoice-node");
 const PvRecorder = require("@picovoice/pvrecorder-node");
 const axios = require("axios");
@@ -226,6 +228,38 @@ process.on("SIGINT", function () {
 
 (async function () {
   try {
+    const app = express()
+    const port = 3000
+    
+    app.get('/sound/play', (req, res) => {
+      playSound(req.query.file);
+      res.send('OK');
+    });
+
+    app.get('/video/play', (req, res) => {
+      playVideo(req.query.id);
+      res.send('OK');
+    });
+
+    app.get('/joke/random', (req, res) => {
+      joke();
+      res.send('OK');
+    });
+
+    app.get('/party/start', (req, res) => {
+      startParty();
+      return true;
+    });
+
+    ap.get('/party/stop', (req, res) => {
+      endParty();
+      res.send('OK');
+    });
+    
+    app.listen(port, () => {
+      console.log(`Example app listening on port ${port}`)
+    })
+
     playSound('./music/Listening.mp3');
 
     // await runHomie();
