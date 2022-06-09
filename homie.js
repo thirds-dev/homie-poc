@@ -251,7 +251,7 @@ process.on("SIGINT", function () {
       return true;
     });
 
-    ap.get('/party/stop', (req, res) => {
+    app.get('/party/stop', (req, res) => {
       endParty();
       res.send('OK');
     });
