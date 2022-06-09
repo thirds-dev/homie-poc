@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@opentelemetry/api": "^1.1.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.30.0",
+    "@opentelemetry/sdk-node": "^0.29.2",
     "@picovoice/picovoice-node": "^2.1.1",
     "@picovoice/porcupine-node": "^2.1.1",
     "@picovoice/pvrecorder-node": "^1.0.2",
