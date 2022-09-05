@@ -13,6 +13,8 @@ const philipsHueSyncKey = process.env.PHILIPS_HUE_SYNC_ACCESS_KEY;
 const accessKey = process.env.PICOVOICE_ACCESS_KEY;
 
 const devices = PvRecorder.getAudioDevices();
+console.log(devices);
+
 let isInterrupted = false;
 
 const { discovery, api, v3 } = require('node-hue-api');
@@ -206,7 +208,7 @@ async function runHomie() {
   );
 
   const frameLength = handle.frameLength;
-  const recorder = new PvRecorder(9, frameLength);
+  const recorder = new PvRecorder(-1, frameLength);
   recorder.start();
 
   console.log(`Using device: ${recorder.getSelectedDevice()}...`);
