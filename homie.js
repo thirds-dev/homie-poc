@@ -262,7 +262,7 @@ process.on("SIGINT", function () {
 
     playSound('./music/Listening.mp3');
 
-    // await runHomie();
+    await runHomie();
   } catch (e) {
     console.error(e.toString());
   }
