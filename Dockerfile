@@ -9,7 +9,7 @@ RUN apt-get install -y nodejs
 # Create app directory
 WORKDIR /usr/src/app
 
-COPY package.json package-lock.json homie.js yo-homie.ppn yo-homie.rhn ./
+COPY package.json package-lock.json homie.js yo-homie-pi.ppn yo-homie-pi.rhn ./
 COPY music ./music/
 
 # Install app dependencies
