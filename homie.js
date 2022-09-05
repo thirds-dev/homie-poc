@@ -209,7 +209,9 @@ async function runHomie() {
   );
 
   const frameLength = handle.frameLength;
-  const recorder = new PvRecorder(-1, frameLength);
+  const deviceIndex = devices.findIndex((d) => d.includes('HyperX'));
+  console.log('deviceIndex: ', deviceIndex);
+  const recorder = new PvRecorder(deviceIndex, frameLength);
   recorder.start();
 
   console.log(`Using device: ${recorder.getSelectedDevice()}...`);
