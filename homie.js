@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require("fs");
 
 const express = require("express");
@@ -199,9 +200,9 @@ async function runHomie() {
 
   const handle = new Picovoice(
     accessKey,
-    './yo-homie.ppn',
+    path.join(__dirname, 'yo-homie.ppn'),
     keywordCallback,
-    './yo-homie.rhn',
+    path.join(__dirname, 'yo-homie.rhn'),
     inferenceCallback,
     0.5,
     0.5
@@ -266,6 +267,7 @@ process.on("SIGINT", function () {
 
     await runHomie();
   } catch (e) {
+    console.log(e);
     console.error(e.toString());
   }
 })();
