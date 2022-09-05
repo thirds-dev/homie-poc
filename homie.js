@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const express = require("express");
 
-const Picovoice = require("@picovoice/picovoice-node");
+const { Picovoice } = require("@picovoice/picovoice-node");
 const PvRecorder = require("@picovoice/pvrecorder-node");
 const axios = require("axios");
 const ChromecastApi = require("chromecast-api");

@@ -14,7 +14,6 @@
     "@opentelemetry/auto-instrumentations-node": "^0.30.0",
     "@opentelemetry/sdk-node": "^0.29.2",
     "@picovoice/picovoice-node": "^2.1.8",
-    "@picovoice/porcupine-node": "^2.1.7",
     "@picovoice/pvrecorder-node": "^1.1.0",
     "axios": "^0.26.0",
     "axois": "^0.0.1-security",
