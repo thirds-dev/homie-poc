@@ -158,7 +158,7 @@ async function understood() {
 
 async function runHomie() {
   let keywordCallback = function (keyword) {
-    console.log(`Wake word detected.`);
+    console.log(`Wake word detected.`, keyword);
 
     playSound('./music/Listening.mp3');
 
@@ -200,12 +200,10 @@ async function runHomie() {
 
   const handle = new Picovoice(
     accessKey,
-    path.join(__dirname, 'yo-homie.ppn'),
+    path.join(__dirname, 'yo-homie-pi.ppn'),
     keywordCallback,
-    path.join(__dirname, 'yo-homie.rhn'),
+    path.join(__dirname, 'yo-homie-pi.rhn'),
     inferenceCallback,
-    0.5,
-    0.5
   );
 
   const frameLength = handle.frameLength;

@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Install OS dependencies
 RUN apt update
-RUN apt-get -y install alsa-utils mpg123 lame curl
+RUN apt-get -y install linux-modules-extra-raspi alsa-utils mpg123 lame curl
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get install -y nodejs
 
