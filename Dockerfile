@@ -17,4 +17,4 @@ COPY src ./src/
 RUN npm i
 
 EXPOSE 3000
-CMD [ "node", "homie.js" ]
+CMD [ "npm", "start" ]
