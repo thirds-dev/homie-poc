@@ -89,9 +89,9 @@ export const run = async () => {
 
   const handle = new Picovoice(
     process.env.PICOVOICE_ACCESS_KEY,
-    path.join(process.cwd(), "yo-homie-mac.ppn"),
+    path.join(process.cwd(), "yo-homie-pi.ppn"),
     keywordCallback,
-    path.join(process.cwd(), "yo-homie-mac.rhn"),
+    path.join(process.cwd(), "yo-homie-pi.rhn"),
     inferenceCallback
   );
 
