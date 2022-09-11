@@ -1,18 +1,20 @@
-import * as light from "../light";
-import { chromecast } from "./device";
+import light from "../light";
+import device from "./device";
 
-export const play = async (videoId) => {
+const play = async (videoId) => {
   await light.sync.video();
 
-  const device = chromecast();
+  const player = device.chromecast();
 
-  if (device) {
+  if (player) {
     await new Promise((resolve, reject) => {
       try {
-        device.play(videoId, resolve);
+        player.play(videoId, resolve);
       } catch (err) {
         reject(err);
       }
     });
   }
 };
+
+export default play;

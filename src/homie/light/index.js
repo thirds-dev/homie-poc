@@ -1,5 +1,15 @@
-export * as sync from './sync/index.js';
-export { api } from './api.js';
-export { off } from './off.js';
-export { on } from './on.js';
-export { state } from './state.js';
+import sync from "./sync";
+import api from "./api";
+import off from "./off";
+import on from "./on";
+import state from "./state";
+
+const light = {
+  sync,
+  api,
+  on,
+  off,
+  state,
+};
+
+export default light;

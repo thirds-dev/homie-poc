@@ -1,3 +1,5 @@
-import { mode } from "./mode.js";
+import mode from "./mode";
 
-export const video = () => mode("video");
+const video = async () => mode("video");
+
+export default video;

@@ -1,3 +1,5 @@
-import { mode } from "./mode.js";
+import mode from "./mode";
 
-export const off = () => mode("powersave");
+const off = async () => mode("powersave");
+
+export default off;

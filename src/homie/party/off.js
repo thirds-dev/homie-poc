@@ -1,10 +1,14 @@
-import { off as lightOff } from "../light/off.js";
+import light from "../light";
 
-export const off = async () =>
+const off = async () =>
   Promise.all([
-    lightOff(9),
-    lightOff(6),
-    lightOff(2),
-    lightOff(3),
-    lightOff(4),
+    light.off(9),
+    light.off(6),
+    light.off(2),
+    light.off(3),
+    light.off(4),
+    light.sync.off(),
+    video.play("Ig2D6xa_-IM"),
   ]);
+
+export default off;

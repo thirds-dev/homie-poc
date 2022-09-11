@@ -1,12 +1,14 @@
-import { play as playVideo } from "../video/play.js";
-import { on as lightOn } from "../light/on.js";
+import video from "../video";
+import light from "../light";
 
-export const on = async () =>
+const on = async () =>
   Promise.all([
-    lightOn(9),
-    lightOn(6),
-    lightOn(2),
-    lightOn(3),
-    lightOn(4),
-    playVideo("Ig2D6xa_-IM"),
+    light.on(9),
+    light.on(6),
+    light.on(2),
+    light.on(3),
+    light.on(4),
+    video.play("Ig2D6xa_-IM"),
   ]);
+
+export default on;

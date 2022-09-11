@@ -2,7 +2,7 @@ import playSound from "play-sound";
 
 const player = playSound();
 
-export const play = async (location) =>
+export const file = async (location) =>
   new Promise((resolve, reject) => {
     player.play(location, (err) => {
       if (err) {
@@ -13,4 +13,4 @@ export const play = async (location) =>
     });
   });
 
-export default play;
+export default file;

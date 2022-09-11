@@ -1,1 +1,7 @@
-export { chromecast } from "./chromecast.js";
+import chromecast from "./chromecast";
+
+const device = {
+  chromecast,
+};
+
+export default device;

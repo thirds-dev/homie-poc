@@ -1,7 +1,9 @@
 import { v3 } from "node-hue-api";
 
-import { state } from "./state.js";
+import state from "./state";
 
 const { LightState } = v3.lightStates;
 
-export const on = (lightId) => state(lightId, new LightState().on());
+const on = async (lightId) => state(lightId, new LightState().on());
+
+export default on;

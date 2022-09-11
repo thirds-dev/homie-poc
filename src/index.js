@@ -1,6 +1,6 @@
-import { run } from "./homie/index.js";
-
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
+import run from "./run.js";
 
 (async () => {
   try {

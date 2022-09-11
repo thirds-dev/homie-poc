@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const mode = (newMode = undefined) =>
+const mode = (newMode = undefined) =>
   axios(
     newMode
       ? {
@@ -22,3 +22,5 @@ export const mode = (newMode = undefined) =>
           },
         }
   );
+
+export default mode;

@@ -1,5 +1,6 @@
-import { api } from "./api.js";
+import api from "./api";
 
-export const state = async (lightId, newState) => (
-  (await api()).lights.setLightState(lightId, newState)
-);
+const state = async (lightId, newState) =>
+  await (await api()).lights.setLightState(lightId, newState);
+
+export default state;

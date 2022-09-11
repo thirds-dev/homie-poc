@@ -1,3 +1,5 @@
-import { random as randomAudio } from "../audio/random.js";
+import audio from "../audio";
 
-export const random = () => randomAudio("./music/jokes");
+const random = async () => audio.play.random("./music/jokes");
+
+export default random;

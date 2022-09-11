@@ -1,5 +1,9 @@
-export * as device from "./device/index.js";
-export { notUnderstood } from "./not-understood.js";
-export { play } from "./play.js";
-export { random } from "./random.js";
-export { understood } from "./understood.js";
+import play from "./play";
+import record from "./record";
+
+const audio = {
+  play,
+  record,
+};
+
+export default audio;
