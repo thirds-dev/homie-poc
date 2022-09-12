@@ -1,9 +1,9 @@
 import on from "./on";
 import off from "./off";
 
-const api = {
+const lights = {
   on,
   off,
 };
 
-export default api;
+export default lights;

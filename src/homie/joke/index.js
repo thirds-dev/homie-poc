@@ -1,7 +1,6 @@
 import random from "./random";
 
-const joke = {
-  random,
-};
+const joke = () => random();
+joke.random = random;
 
 export default joke;

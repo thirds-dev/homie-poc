@@ -1,7 +1,7 @@
 import light from "../light";
 import device from "./device";
 
-const play = async (videoId) => {
+const play = async ({ url }) => {
   await light.sync.video();
 
   const player = device.chromecast();
@@ -9,7 +9,7 @@ const play = async (videoId) => {
   if (player) {
     await new Promise((resolve, reject) => {
       try {
-        player.play(videoId, resolve);
+        player.play(url, resolve);
       } catch (err) {
         reject(err);
       }

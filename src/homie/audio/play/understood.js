@@ -1,5 +1,5 @@
 import random from "./random";
 
-const understood = async () => random("./music/ok");
+const understood = async () => random({ path: "ok" });
 
 export default understood;

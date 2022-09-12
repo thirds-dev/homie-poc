@@ -1,14 +1,16 @@
+import api from "./api";
+import microphone from "./microphone";
 import homie from "./homie";
 
 const run = async () => {
   // start web api
-  await homie.api.on();
+  await api.on();
 
   // play I'm Listening file
-  homie.audio.play.file("./music/Listening.mp3");
+  homie.audio.play.file({ path: "Listening.mp3" });
 
   // listen to microphone (if one is available)
-  await homie.audio.record.microphone();
+  await microphone();
 };
 
 export default run;
