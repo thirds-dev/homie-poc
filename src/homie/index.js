@@ -5,7 +5,6 @@ import joke from "./joke";
 import hello from "./hello";
 import light from "./light";
 import lights from "./lights";
-import nats from "./nats";
 import party from "./party";
 import think from "./think";
 import touch from "./touch";
@@ -22,7 +21,6 @@ const homie = {
     hello,
     light,
     lights,
-    nats,
     party,
     think,
     touch,
