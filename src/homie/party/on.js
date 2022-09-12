@@ -22,10 +22,12 @@ const lightsRandomColor = async () => {
 const on = async () => {
   await audio.play.understood();
   await lights.on();
+  /*
   await repeat({ count: 20 }, async () => {
     await lightsRandomColor();
     await sleep({ seconds: 1 });
   });
+  */
   await video.play({ url: "https://youtube.com/watch?v=Ig2D6xa_-IM" });
 };
 

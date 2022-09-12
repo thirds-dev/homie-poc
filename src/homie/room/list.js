@@ -5,6 +5,6 @@ const list = async () => {
     const result = apiInstance.groups.getRooms();
 
     return result;
-}
+};
 
 export default list;

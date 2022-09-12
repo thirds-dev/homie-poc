@@ -1,13 +1,12 @@
+import { v3 } from "node-hue-api";
+
 import light from "../light";
 
-const off = async () => {
-  await Promise.all([
-    light.off({ id: 9 }),
-    light.off({ id: 6 }),
-    light.off({ id: 2 }),
-    light.off({ id: 3 }),
-    light.off({ id: 4 })
-  ]);  
-};
+const { GroupLightState } = v3.lightStates;
+
+const off = async () => light.group.setStates({
+  "Living Room": new GroupLightState().off(),
+  "Patio": new GroupLightState().off(),
+});
 
 export default off;
