@@ -22,13 +22,17 @@ const inferenceCallback = async (inference) => {
   console.log(JSON.stringify(inference, null, 4));
 
   try {
-    const path = inference.intent.split(".");
-    const method = path.reduce(
-      (prev, cur) => (cur && prev[cur] ? prev[cur] : prev),
-      homie
-    );
+    if (inference.intent) {
+      const path = inference.intent.split(".");
+      const method = path.reduce(
+        (prev, cur) => (cur && prev[cur] ? prev[cur] : prev),
+        homie
+      );
 
-    await method();
+      await method();
+    } else {
+      await homie.audio.play.notUnderstood();
+    }
   } catch (err) {
     console.log(err);
     await homie.audio.play.notUnderstood();

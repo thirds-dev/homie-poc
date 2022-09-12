@@ -3,19 +3,23 @@ import { v3 } from "node-hue-api";
 import room from "../room";
 import light from "../light";
 
-const { LightState } = v3.lightStates;
+const { GroupLightState } = v3.lightStates;
+
+const states = {
+  "Living Room": new GroupLightState().on().brightness(100).scene('Day'),
+};
 
 const morning = async () => {
   const rooms = await room.list();
-  const livingRoom = rooms.find((r) => r.name === "Living Room");
-  const patio = rooms.find((r) => r.name === "Patio");
 
-  await Promise.all(
-    livingRoom?.data.lights.map(async (id) =>
-      light.state({ id, value: new LightState().on().brightness(30).rgb(255, 255, 255) })
-    )
-  );
-  await Promise.all(patio?.data.lights.map(async (id) => light.off({ id })));
+  await Promise.all(rooms.map(async (room) => {
+    const { id, name } = room;
+    const value = states[name];
+
+    if (value) {
+      await light.group.setState({ id, value });
+    }
+  }));
 };
 
 export default morning;
