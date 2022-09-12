@@ -1,7 +1,7 @@
 import list from "./list";
 
-const area = {
+const zone = {
   list,
 };
 
-export default area;
+export default zone;

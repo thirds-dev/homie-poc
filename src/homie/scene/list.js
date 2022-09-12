@@ -2,9 +2,9 @@ import light from "../light";
 
 const list = async () => {
     const api = await light.api();
-    const users = api.users.getAll();
+    const scenes = await api.scenes.getAll();
 
-    return users;
+    return scenes;
 };
 
 export default list;
