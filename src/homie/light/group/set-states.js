@@ -2,13 +2,18 @@ import api from "../api";
 import list from "./list";
 
 const setStates = async (states) => {
-  const apiInstance = await api();
-  const groups = await list();
+  const [apiInstance, groupList ] = await Promise.all([
+    api(),
+    list(),
+  ]);
+
+  const statesByGroupId = groupList.filter((g) => !!states[g.name])
+    .reduce((o, g) => { o[g.id] = states[g.name]; return o; }, {});
 
   const result = await Promise.all(
-    groups
-      .filter((g) => !!states[g.name])
-      .map((g) => apiInstance.groups.setGroupState(g.id, states[g.name]))
+    Object.entries(statesByGroupId).map(async ([groupId, state]) =>
+      apiInstance.groups.setGroupState(groupId, state)
+    )
   );
 
   return result;
