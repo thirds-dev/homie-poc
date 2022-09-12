@@ -1,10 +1,10 @@
 import { discovery, api as hueApi } from "node-hue-api";
 
-let apiInstance = null;
+let _api;
 
 const api = async () => {
-  if (!apiInstance) {
-    apiInstance = discovery
+  if (!_api) {
+    _api = discovery
       .nupnpSearch()
       .then((results) =>
         hueApi
@@ -13,7 +13,7 @@ const api = async () => {
       );
   }
 
-  return apiInstance;
+  return _api;
 };
 
 export default api;

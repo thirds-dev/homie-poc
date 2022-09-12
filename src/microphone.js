@@ -38,13 +38,21 @@ const inferenceCallback = async (inference) => {
 };
 
 const microphone = async () => {
+  const platforms = {
+    darwin: "mac",
+    win32: "win",
+    linux: "pi",
+  };
+  const platform = platforms[process.platform] || platforms.linux;
   const handle = new Picovoice(
     process.env.PICOVOICE_ACCESS_KEY,
-    path.join(process.cwd(), "yo-homie-mac.ppn"),
+    path.join(process.cwd(), `yo-homie-${platform}.ppn`),
     keywordCallback,
-    path.join(process.cwd(), "yo-homie-mac.rhn"),
+    path.join(process.cwd(), `yo-homie-${platform}.rhn`),
     inferenceCallback
   );
+
+
 
   const frameLength = handle.frameLength;
   const deviceIndex = homie.audio.record.device.list().findIndex((d) => d.includes("HyperX"));
