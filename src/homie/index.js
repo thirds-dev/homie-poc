@@ -10,6 +10,7 @@ import outside from "./outside";
 import party from "./party";
 import room from "./room";
 import scene from "./scene";
+import tesla from "./tesla";
 import think from "./think";
 import touch from "./touch";
 import user from "./user";
@@ -31,6 +32,7 @@ const homie = {
   party,
   room,
   scene,
+  tesla,
   think,
   touch,
   user,
