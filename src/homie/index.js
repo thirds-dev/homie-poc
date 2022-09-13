@@ -2,9 +2,11 @@ import audio from "./audio";
 import desktop from "./desktop";
 import good from "./good";
 import hello from "./hello";
+import jakesroom from "./jakesroom";
 import joke from "./joke";
 import light from "./light";
 import lights from "./lights";
+import outside from "./outside";
 import party from "./party";
 import room from "./room";
 import scene from "./scene";
@@ -21,9 +23,11 @@ const homie = {
   desktop,
   good,
   hello,
+  jakesroom,
   joke,
   light,
   lights,
+  outside,
   party,
   room,
   scene,

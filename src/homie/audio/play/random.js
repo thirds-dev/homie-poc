@@ -6,7 +6,9 @@ import { file as playFile } from "./file";
 const random = async ({ path: folderPath }) =>
   new Promise((resolve, reject) => {
     try {
-      fs.readdir(path.join(process.cwd(), 'music', folderPath), async (err, files) => {
+      const absoluteFolderPath = path.join(process.cwd(), 'music', folderPath);
+
+      fs.readdir(absoluteFolderPath, async (err, files) => {
         if (err) {
           reject(err);
           return;
@@ -14,8 +16,9 @@ const random = async ({ path: folderPath }) =>
 
         try {
           const index = Math.round(Math.random() * (files.length - 1));
+          const absolutePath = path.join(folderPath, files[index]);
 
-          await playFile({ path: path.join(folderPath, files[index]) });
+          await playFile({ path: absolutePath });
 
           resolve();
         } catch (err) {

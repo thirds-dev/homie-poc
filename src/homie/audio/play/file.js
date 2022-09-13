@@ -6,13 +6,10 @@ const player = playSound();
 export const file = async ({ path: filePath }) =>
   new Promise((resolve, reject) => {
     try {
-      player.play(path.join(process.cwd(), 'music', filePath), (err) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
+      const absolutePath = path.join(process.cwd(), "music", filePath);
+      const handler = (err) => (err ? reject(err) : resolve());
+
+      player.play(absolutePath, handler);
     } catch (err) {
       reject(err);
     }
