@@ -13,6 +13,7 @@ import scene from "./scene";
 import tesla from "./tesla";
 import think from "./think";
 import touch from "./touch";
+import twitch from "./twitch";
 import user from "./user";
 import video from "./video";
 import vision from "./vision";
@@ -35,6 +36,7 @@ const homie = {
   tesla,
   think,
   touch,
+  twitch,
   user,
   video,
   vision,
