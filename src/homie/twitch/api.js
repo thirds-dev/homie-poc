@@ -12,11 +12,14 @@ const onAuthenticationFailure = () =>
     },
   }).then((response) => response.accessToken);
 
-const twitchjs = null;
-const api = () => twitchjs || (twitchjs = new TwitchJs({
-  token: process.env.TWITCH_TOKEN, 
-  username: process.env.TWITCH_USERNAME,
-  onAuthenticationFailure
-}));
+let twitchjs = null;
+const api = () => {
+  return twitchjs || (twitchjs = new TwitchJs.default({
+    clientId: process.env.TWITCH_CLIENT_ID,
+    token: process.env.TWITCH_CHAT_ACCESS_TOKEN, 
+    username: process.env.TWITCH_CHAT_USERNAME,
+    onAuthenticationFailure
+  }));
+};
 
 export default api;

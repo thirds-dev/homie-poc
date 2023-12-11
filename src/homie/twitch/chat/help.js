@@ -1,9 +1,5 @@
 import api from "../api";
-import connect from "./connect";
 
-const help = async ({ channel }) => {
-    await connect();
-    await api.chat.help(channel);
-};
+const help = async ({ channel }) => api().chat.help(channel);
 
 export default help;

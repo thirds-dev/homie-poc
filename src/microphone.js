@@ -4,7 +4,6 @@ import { Picovoice } from "@picovoice/picovoice-node";
 import PvRecorder from "@picovoice/pvrecorder-node";
 
 import homie from "./homie";
-import party from "./homie/party";
 
 const keywordCallback = async (keyword) => {
   console.log(`Wake word detected.`, keyword);
@@ -30,6 +29,13 @@ const inferenceCallback = async (inference) => {
       );
 
       await method();
+
+      websocket.clients.forEach((client) => {
+        console.log(`${client.readyState}`);
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({command: intent}));
+        }
+      });
     } else {
       await homie.audio.play.notUnderstood();
     }
@@ -41,7 +47,7 @@ const inferenceCallback = async (inference) => {
   console.log(`Listening for wake word...`);
 };
 
-const microphone = async () => {
+const microphone = async ({ websocket }) => {
   const platforms = {
     darwin: "mac",
     win32: "win",

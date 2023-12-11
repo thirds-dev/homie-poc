@@ -1,9 +1,5 @@
 import api from "../api";
-import connect from "./connect";
 
-const emoteOnlyOff = async ({ channel }) => {
-  await connect();
-  await api.chat.emoteOnlyOff(channel);
-};
+const emoteOnlyOff = async ({ channel }) => api().chat.emoteOnlyOff(channel);
 
 export default emoteOnlyOff;

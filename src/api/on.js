@@ -1,11 +1,11 @@
-import app from "./app";
+import server from "./server";
 
-const port = 3000;
+const port = 4000;
 
 const on = async () =>
   new Promise((resolve, reject) => {
     try {
-      app().listen(port, resolve);
+      server.listen(port, resolve);
     } catch (err) {
       reject(err);
     }

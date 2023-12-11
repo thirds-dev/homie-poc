@@ -1,10 +1,12 @@
 import api from "../api";
-import connect from "./connect";
 
-const listen = async ({ topic, handler }) => {
-  await connect();
-  api.chat.on(topic, handler);
-};
+const listen = async ({
+  topic,
+  handler
+}) => api().chat.on(
+  topic,
+  handler
+);
 
 export default listen;
 
